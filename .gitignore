@@ -3,3 +3,4 @@ kmc-dental-data-aoi/
 new_data/
 new_data_aoi/
 files/
+__pycache__/
