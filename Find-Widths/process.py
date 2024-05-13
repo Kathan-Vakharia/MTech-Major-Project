@@ -1,16 +1,17 @@
 import cv2
 import numpy as np
+import bounding_box
 
 # Load the grayscale image
-img = cv2.imread('1_aoi.png', 0)
+input_img_path = './Input-Images/1_aoi.png'
+img = cv2.imread(input_img_path, 0)
 
 # Binarize the image
 _, binary_img = cv2.threshold(img, 1, 255, cv2.THRESH_BINARY)
-# print(np.unique(binary_img))
-cv2.imwrite('binary_image.png', binary_img)
 
-# Get the bounding box coordinates
-bounding_box_coordinates = [337, 449, 85, 150]
+
+# Get the bounding box coordinates of AOI
+bounding_box_coordinates = bounding_box.get_bounding_box(input_img_path)
 x, y, w, h = bounding_box_coordinates  # Replace with the actual coordinates
 
 # Initialize an empty list to store the widths
